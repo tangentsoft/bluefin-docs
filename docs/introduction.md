@@ -72,7 +72,7 @@ Most pain points can be addressed directly by planning ahead of time.
   - Do you understand the limitations of having an Nvidia GPU? (If applicable?)
   - Does the hardware require an out of tree kernel module? This may lead to long term maintenance issues.
   - Does the software you use require an out of tree kernel module?
-    - VirtualBox and VMWare are not supported
+    - VM managers that depend on "guest tools" to be installed for virtualized driver support are not supported; this includes VirtualBox, VMWare, and Parallels, but **not** QEMU based ones like UTM or KVM since Bluefin ships with VirtIO drivers
     - Nvidia, Xbox One Controller Support, wl drivers, and v4l2loopback are supported. (These are "best effort", in certain cases we cannot control third party software that breaks with newer versions of the Linux kernel)
     - [openzfs](https://github.com/openzfs/zfs) is included out of the box. It is used by maintainers regularly and has not yet fallen behind the kernels Bluefin ships. However, we still cannot guarantee this as it is an out of tree kernel module.
   - Is your wireless card supported by Linux?
